@@ -120,7 +120,6 @@
                 
                 echo '<p class="status">✓ Conectado ao banco de dados: <strong>' . htmlspecialchars(DB_NAME) . '</strong></p>';
                 
-                // ✅ SEGURO: Usando Prepared Statement
                 $sql = "select * from alunos";
                 $stmt = mysqli_prepare($ret, $sql);
                 
