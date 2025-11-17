@@ -1,6 +1,5 @@
 <?php
 //DAO - Data Access Object
-//Pense nele como o "porteiro" do seu banco de dados.
 function conectar(){
     require_once('config.php');
     
