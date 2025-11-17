@@ -11,7 +11,6 @@ try {
     $telefone = $_POST['telefone'];
     $sexo = $_POST['sexo'];
 
-    // ✅ SEGURO: Usando Prepared Statement
     $sql = "select * from alunos where rgm = ?";
     $stmt = mysqli_prepare($ret, $sql);
     mysqli_stmt_bind_param($stmt, "i", $rgm);
@@ -25,7 +24,6 @@ try {
         echo "</div>";
         echo '<a href="formCadastroBD.php" style="display: block; text-align: center; margin-top: 20px; padding: 10px; background-color: #667eea; color: white; text-decoration: none; border-radius: 5px;">Voltar ao Cadastro</a>';
     }else{
-        // ✅ SEGURO: Usando Prepared Statement para INSERT
         $sql = "insert into alunos (rgm, nome, telefone, sexo) values(?, ?, ?, ?)";
         $stmt = mysqli_prepare($ret, $sql);
         mysqli_stmt_bind_param($stmt, "isss", $rgm, $nome, $telefone, $sexo);
